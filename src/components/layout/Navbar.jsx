@@ -6,29 +6,49 @@ function Navbar() {
     JSON.parse(localStorage.getItem("savedJobs"))?.length || 0;
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Link
-          to="/"
-          className="flex items-center gap-2 text-xl font-bold text-blue-600"
-        >
-          <FaBriefcase className="text-2xl" />
-          <span>CareerStream</span>
-        </Link>
+    <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between py-5">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center bg-blue-600 text-white rounded-2xl shadow-md">
+              <FaBriefcase className="text-2xl" />
+            </div>
+            <span className="text-2xl font-bold tracking-tight text-gray-900">
+              CareerStream
+            </span>
+          </Link>
 
-        <div className="flex items-center gap-6">
-          <NavLink to="/">Home</NavLink>
-          <NavLink
-            to="/saved-jobs"
-            className="relative flex items-center gap-2"
-          >
-            <FaBookmark /> Saved Jobs
-            {savedJobsCount > 0 && (
-              <span className="absolute -top-2 -right-4 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white">
-                {savedJobsCount}
-              </span>
-            )}
-          </NavLink>
+          {/* Navigation */}
+          <div className="flex items-center gap-8">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `font-medium text-lg transition-colors hover:text-blue-600 ${
+                  isActive ? "text-blue-600 font-semibold" : "text-gray-600"
+                }`
+              }
+            >
+              Home
+            </NavLink>
+
+            <NavLink
+              to="/saved-jobs"
+              className={({ isActive }) =>
+                `relative flex items-center gap-2 font-medium text-lg transition-colors hover:text-blue-600 ${
+                  isActive ? "text-blue-600 font-semibold" : "text-gray-600"
+                }`
+              }
+            >
+              <FaBookmark className="text-xl" />
+              Saved Jobs
+              {savedJobsCount > 0 && (
+                <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs font-bold text-white">
+                  {savedJobsCount}
+                </span>
+              )}
+            </NavLink>
+          </div>
         </div>
       </nav>
     </header>
