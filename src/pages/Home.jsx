@@ -16,7 +16,7 @@ function Home() {
       <section className="rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-12 text-white shadow-md">
         <h1 className="text-4xl font-bold">Find Jobs & Internships Easily</h1>
         <p className="mt-4 max-w-2xl text-lg text-blue-100">
-          Disc the right opportunities with CareerStream .
+          the right opportunities with CareerStream .
         </p>
       </section>
 
