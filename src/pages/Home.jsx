@@ -25,5 +25,5 @@ function Home() {
     </MainLayout>
   );
 }
-//hello how are you doingg am i doing great? yes how about you
+
 export default Home;
