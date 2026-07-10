@@ -10,7 +10,7 @@ function Home() {
     jobType: "",
     workMode: "",
   });
-
+  /////////adeededgreen dot
   return (
     <MainLayout>
       <section className="rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-12 text-white shadow-md">
